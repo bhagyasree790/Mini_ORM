@@ -1,7 +1,7 @@
 -- up
 CREATE TABLE IF NOT EXISTS products (
- id INTEGER NOT NULL,
- name TEXT NULL,
+ id SERIAL PRIMARY KEY,
+ name TEXT NOT NULL,
  price NUMERIC NOT NULL,
  discount NUMERIC NULL,
  instock BOOLEAN NOT NULL

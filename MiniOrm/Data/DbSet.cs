@@ -30,7 +30,7 @@ public class Dbset<T> where T : class, new()
             cmd.Parameters.AddWithValue("@" + column.ColumnName, value);
         }
 
-        int newId = (int)cmd.ExecuteScalar(); //ExecuteScalar() runs the SQL and catches that RETURNING id value.
+        int newId = Convert.ToInt32(cmd.ExecuteScalar()); //ExecuteScalar() runs the SQL and catches that RETURNING id value.
         _metadata.PrimaryKeyProperty.SetValue(entity, newId);
 
         return newId;
@@ -93,7 +93,7 @@ public class Dbset<T> where T : class, new()
             cmd.Parameters.AddWithValue("@" + col.ColumnName, col.Property.GetValue(entity) ?? DBNull.Value); //pass nullvalue for nullable properties.
         }
 
-        cmd.Parameters.AddWithValue("@pk", prkColumn.Property.GetValue(entity));
+        cmd.Parameters.AddWithValue("@pk", prkColumn.Property.GetValue(entity) ?? DBNull.Value);
 
         cmd.ExecuteNonQuery();
     }

@@ -39,9 +39,9 @@ public static class TypeMapper
             }
 
             bool isPrimaryKey = primaryKeyAttribute != null;
-            string columnName = isPrimaryKey? primaryKeyAttribute.Name : columnAttribute!.Name; //It determines if the property is the Primary Key and gets the actual column name.
+            string columnName = isPrimaryKey ? primaryKeyAttribute!.Name : columnAttribute!.Name;
 
-            var columnMetadata = new ColumnMetadata    //It converts C# types to Postgres types.
+            var columnMetadata = new ColumnMetadata
             {
                 ColumnName = columnName,
                 IsPrimaryKey = isPrimaryKey,
@@ -76,15 +76,14 @@ public static class TypeMapper
     {
         Type type = prop.PropertyType;
         Type? underLyingType = Nullable.GetUnderlyingType(type);
-
-        bool isNullable = underLyingType != null || type ==typeof(string);
-
         Type baseType = underLyingType ?? type;
 
-        if(isNullable && baseType == typeof(int) && isPrimaryKey)
+        if (isPrimaryKey && (baseType == typeof(int) || baseType == typeof(long)))
         {
-            return "SERIAL PRIMARY KEY";
+            return baseType == typeof(int) ? "SERIAL PRIMARY KEY" : "BIGSERIAL PRIMARY KEY";
         }
+
+        bool isNullable = IsPropertyNullable(prop);
 
         string pgType = baseType.Name switch
         {

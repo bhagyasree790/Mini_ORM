@@ -206,11 +206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bhagyasree/Downloads/MiniORM_V4/MiniORM_V3/MiniORM_V2/MiniORM/MiniORM/MiniOrm.Migrations/MiniOrm.Migrations.csproj",
+      "projectUniqueName": "/home/bhagyasree/Documents/GitHub/Mini_ORM/MiniOrm.Migrations/MiniOrm.Migrations.csproj",
       "projectName": "MiniOrm.Migrations",
-      "projectPath": "/home/bhagyasree/Downloads/MiniORM_V4/MiniORM_V3/MiniORM_V2/MiniORM/MiniORM/MiniOrm.Migrations/MiniOrm.Migrations.csproj",
+      "projectPath": "/home/bhagyasree/Documents/GitHub/Mini_ORM/MiniOrm.Migrations/MiniOrm.Migrations.csproj",
       "packagesPath": "/home/bhagyasree/.nuget/packages/",
-      "outputPath": "/home/bhagyasree/Downloads/MiniORM_V4/MiniORM_V3/MiniORM_V2/MiniORM/MiniORM/MiniOrm.Migrations/obj/",
+      "outputPath": "/home/bhagyasree/Documents/GitHub/Mini_ORM/MiniOrm.Migrations/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/bhagyasree/.nuget/NuGet/NuGet.Config"
@@ -225,8 +225,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/bhagyasree/Downloads/MiniORM_V4/MiniORM_V3/MiniORM_V2/MiniORM/MiniORM/MiniOrm/MiniOrm.csproj": {
-              "projectPath": "/home/bhagyasree/Downloads/MiniORM_V4/MiniORM_V3/MiniORM_V2/MiniORM/MiniORM/MiniOrm/MiniOrm.csproj"
+            "/home/bhagyasree/Documents/GitHub/Mini_ORM/MiniOrm/MiniOrm.csproj": {
+              "projectPath": "/home/bhagyasree/Documents/GitHub/Mini_ORM/MiniOrm/MiniOrm.csproj"
             }
           }
         }

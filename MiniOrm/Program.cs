@@ -1,7 +1,7 @@
 ﻿using MiniOrm.Data;
 using MiniOrm.Models;
 
-var connectionString = "Host=localhost;Port=5432;Database=miniorm;Username=postgres;Password=yourpassword";
+var connectionString = "Host=localhost;Port=5432;Database=miniorm;Username=postgres;Password=0987654321";
 if(string.IsNullOrEmpty(connectionString))
 {
     Console.WriteLine("Please set the MINIORM_CONN environment variable with your database connection string.");
@@ -20,12 +20,12 @@ var product = new Product
     InStock = true
 };
 
-int newId = db.Products.Insert(product);
+db.Products.Insert(product);
 
-Console.WriteLine($"Inserted Product Id = {newId}, Discount = {product.Discount}");
+Console.WriteLine($"Inserted Product Id = {product.Id}, Discount = {product.Discount}");
 
 //FINDING BY ID
-var foundProduct = db.Products.FindById(newId);
+var foundProduct = db.Products.FindById(product.Id);
 if(foundProduct != null)
 {
     Console.WriteLine($"Found Product: Id={foundProduct.Id}, Name={foundProduct.Name}, Price={foundProduct.Price}, Discount={foundProduct.Discount}, InStock={foundProduct.InStock}");
