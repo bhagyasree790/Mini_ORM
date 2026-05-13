@@ -1,4 +1,5 @@
 # Mini ORM
+
 ## 📌 Project Purpose
 A simplified, scratch-built Object-Relational Mapper (ORM) using ADO.NET and Npgsql. Implemented a library that maps C# classes to PostgreSQL. This project demonstrates the internal workings of an ORM, including reflection-based metadata mapping, generic CRUD operations, and a command-line migration tool and included a step-by-step coding demo that proves the whole system works against a live database exactly as a real consumer would use it.
 
@@ -9,6 +10,7 @@ The solution consists of two console projects:
 *   **MiniOrm/**: The core library containing the `DbContext`, generic `DbSet<T>`, and the `TypeMapper`. It also includes a step-by-step coding demo in `Program.cs`.
 *   **MiniOrm.Migrations/**: A CLI tool for managing database schema changes (creating, applying, and rolling back migrations).
 
+![Project Overview](assets/screenshot.png)
 
 ## Prerequisites
 
